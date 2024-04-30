@@ -1,0 +1,27 @@
+data = load_data
+
+encoder = transformers.from_pretrained(siglip)
+for param in encoder.siglip.parameters():
+    param.requires_grad = false
+projector = MLP(1152, 3072)
+decoder = transformers.from_pretrained(phi-3-mini)
+for param in decoder.siglip.parameters():
+    param.requires_grad = false
+
+def training(data):
+    image, query, answer = data.expand()
+    loss_fn = torch.nn.CrossEntropyLoss()
+    
+    img_embeds = encoder(image)
+    lm_img_embeds = projector(img_embeds)
+
+    tokenized_query = phi-3-mini_tokenizer(query)
+    tokenized_answer = phi-3-mini_tokenizer(answer)
+
+    # make sure <image> is -200 in tokenizer.
+
+    input = torch.cat(lm_img_embeds, tokenized_answer.input_ids)
+
+    generated = 
+
+

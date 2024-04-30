@@ -8,3 +8,9 @@ The data that can be used includes:
 - [LLaVA-Instruct-150K](https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K) - 150K samples.
 
 I'm hoping this will be enough. This is my first semi-serious project of this size.
+
+
+Reference materials:
+- https://huggingface.co/docs/transformers/training#train-in-native-pytorch
+- https://huggingface.co/docs/transformers/main/en/model_doc/siglip
+- https://arxiv.org/pdf/2404.14219
